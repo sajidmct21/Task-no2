@@ -16,12 +16,11 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    tasks: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "Task",
-      },
-    ],
+   role: {
+    type: String,
+    enum: ['user', 'admin', 'vendor'], // Replace with your desired list of roles
+    default: 'admin'
+  }
   },
   { timestamps: true }
 );
